@@ -5,14 +5,14 @@ window.addEventListener("DOMContentLoaded", () => {
 
   const ul = document.querySelector("ul");
 
-  const apiUrl = "https://pokeapi.co/api/v2/pokemon";
+  const apiUrl = "https://pokeapi.co/api/v2/pokemon?limit=10";
   let pokemons = [];
 
   const fetchPokemons = async () => {
-    const pokemonCount = 10;
-    const urlQueries = `?limit=${pokemonCount}`;
+    // const pokemonCount = 10;
+    // const urlQueries = `?limit=${pokemonCount}`;
 
-    const response = await fetch(`${apiUrl}${urlQueries}`);
+    const response = await fetch(apiUrl);
     const data = await response.json();
     pokemons.push(...data.results);
   };
